@@ -1,6 +1,5 @@
 package com.sylar;
 
-import java.rmi.server.ExportException;
 import java.util.Stack;
 
 
@@ -17,7 +16,7 @@ public class Calculator {
     final static String NEGATIVE_OPER = "@";
 
     //操作符优先级定义
-    final static String OPERATOR[] = new String[]{"+-", "*/", "^"};
+    final static String[] OPERATOR_PRIORITY = new String[]{"+-", "*/", "^"};
 
     /**
      * 计算表达式
@@ -186,12 +185,12 @@ public class Calculator {
      * @return
      */
     private boolean isOperator(char op){
-        for(String ops : OPERATOR ){
+        for(String ops : OPERATOR_PRIORITY){
             if( ops.indexOf(op) != -1){
                 return true;
             }
         }
-        return true;
+        return false;
     }
 
     /**
@@ -201,8 +200,8 @@ public class Calculator {
      * @return
      */
     private int getPriority(char op)throws Exception{
-        for( int i = 0; i < OPERATOR.length; ++i ){
-            if( OPERATOR[i].indexOf(op) != -1 ){
+        for(int i = 0; i < OPERATOR_PRIORITY.length; ++i ){
+            if( OPERATOR_PRIORITY[i].indexOf(op) != -1 ){
                 return i;
             }
         }
