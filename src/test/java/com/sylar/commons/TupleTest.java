@@ -24,4 +24,11 @@ public class TupleTest {
         System.out.println( tuple3._1().get() + "|" + tuple3._2().get() + "|" + tuple3._3().get() );
         System.out.println( tuple3.toString() );
     }
+
+    @Test
+    public void testTuple31(){
+        Tuple tuple3 = Tuple.of("hello", "zhang", new String[]{"hello", "string array"});
+        System.out.println( tuple3._1().get() + "|" + tuple3._2().get() + "|" + tuple3._3().get() );
+        System.out.println( tuple3.toString() );
+    }
 }

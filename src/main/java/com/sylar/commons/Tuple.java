@@ -94,7 +94,7 @@ public abstract class Tuple {
         }
 
         public String toString() {
-            return "(" + t1 + ", " + t2 + ", " + t3 + ")";
+            return "(" + t1.toString() + ", " + t2.toString() + ", " + t3.toString() + ")";
         }
     }
 
@@ -132,7 +132,6 @@ public abstract class Tuple {
         public String toString() {
             return "(" + t1 + ", " + t2 + ", " + t3 + ", " + t4 + ", " + t5 + ")";
         }
-
     }
 
 }
