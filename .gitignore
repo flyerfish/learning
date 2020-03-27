@@ -3,3 +3,6 @@
 .vscode/
 target/**/*.*
 .DS_Store
+.classpath
+.project
+*.prefs
