@@ -1,8 +1,11 @@
 package com.sylar.leetcode;
 
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PalindromeTest {
     @Test
     public void test_01_isPalindrome(){

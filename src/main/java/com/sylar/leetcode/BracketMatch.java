@@ -26,7 +26,7 @@ public class BracketMatch {
                 return false;
             }
 
-            if(isMatch(c,stack)){
+            if(isMatch(c, stack.peek())){
                 stack.pop();
             }
         }
@@ -37,12 +37,12 @@ public class BracketMatch {
         return false;
     }
 
-    boolean isMatch(Character c, Stack<Character> stack){
-        if( c == ')' && stack.peek() == '(' ){
+    boolean isMatch(Character c1, Character c2){
+        if( c1 == ')' && c2 == '(' ){
             return true;
-        }else if(c == ']' && stack.peek() == '['){
+        }else if(c1 == ']' && c2 == '['){
             return true;
-        }else if(c == '}' && stack.peek() == '{'){
+        }else if(c1 == '}' && c2 == '{'){
             return true;
         }
         return false;

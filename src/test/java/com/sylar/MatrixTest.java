@@ -1,9 +1,12 @@
 package com.sylar;
 
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
-import java.lang.reflect.*;
+import org.junit.runners.MethodSorters;
 
+import java.lang.reflect.*;
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MatrixTest {
     private int index = 0;
     public int pubindex = 0;
