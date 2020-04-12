@@ -12,4 +12,9 @@ public class LCSsequenceTest {
         Assert.assertEquals(3, lcs.longestCommonSubsequence("abc", "abc"));
     }
 
+    @Test
+    public void testLongestCommonSubsequence2(){
+        LCSsequence lcs = new LCSsequence();
+        Assert.assertEquals(5, lcs.longestCommonSubsequence("abcabcb"));
+    }
 }
