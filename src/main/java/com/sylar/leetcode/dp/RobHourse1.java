@@ -20,11 +20,12 @@ public class RobHourse1 {
             return 0;
         }
         // 避免重复计算
-        if (memo[start] != -1) return memo[start];
-        int res = Math.max(dp(nums, start + 1),
-                nums[start] + dp(nums, start + 2));
+        if (memo[start] != -1) {
+            return memo[start];
+        }
+
         // 记入备忘录
-        memo[start] = res;
-        return res;
+        memo[start] = Math.max(dp(nums, start + 1), nums[start] + dp(nums, start + 2));
+        return memo[start];
     }
 }
