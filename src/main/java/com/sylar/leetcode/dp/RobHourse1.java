@@ -2,6 +2,9 @@ package com.sylar.leetcode.dp;
 
 import java.util.Arrays;
 
+/**
+ * test
+ */
 public class RobHourse1 {
 
     private int[] memo;
