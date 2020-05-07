@@ -6,14 +6,20 @@ public class Queue<T> {
     private LinkedList<T> list = new LinkedList<>();
 
     public void push(T object) {
-        list.addFirst(object);
+        list.addLast(object);
     }
 
     public T top() {
+        if(empty()){
+            return null;
+        }
         return list.getFirst();
     }
 
     public T pop() {
+        if(empty()){
+            return null;
+        }
         return list.removeFirst();
     }
 

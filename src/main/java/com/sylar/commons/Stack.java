@@ -5,16 +5,22 @@ import java.util.LinkedList;
 public class Stack<T> {
     private LinkedList<T> list = new LinkedList<>();
 
-    public void push(T object) {
-        list.addFirst(object);
+    public void push(T obj) {
+        list.addLast(obj);
     }
 
     public T pop() {
-        return list.removeFirst();
+        if( empty() ){
+            return null;
+        }
+        return list.removeLast();
     }
 
     public T peek() {
-        return list.getFirst();
+        if( empty() ){
+            return null;
+        }
+        return list.getLast();
     }
 
     public boolean empty() {
