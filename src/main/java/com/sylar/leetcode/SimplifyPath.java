@@ -25,8 +25,21 @@ public class SimplifyPath {
             return null;
         }
         String newPath = removePathNumber(path);
+        LinkedList<String> stack = getValidPath(newPath);
+        if(stack.isEmpty()){
+            return "/";
+        }
+
+        StringBuffer ret = new StringBuffer();
+        for(String s : stack){
+            ret.append("/" + s);
+        }
+        return ret.toString();
+    }
+
+    private LinkedList<String> getValidPath(String path) {
         LinkedList<String> stack = new LinkedList<>();
-        String[] subPaths = newPath.split("/");
+        String[] subPaths = path.split("/");
         for(int i = 0; i < subPaths.length; ++i){
             if("".equals(subPaths[i])){
                 continue;
@@ -43,14 +56,6 @@ public class SimplifyPath {
                 stack.addLast(subPaths[i]);
             }
         }
-        if(stack.isEmpty()){
-            return "/";
-        }
-
-        StringBuffer ret = new StringBuffer();
-        for(String s : stack){
-            ret.append("/" + s);
-        }
-        return ret.toString();
+        return stack;
     }
 }
