@@ -24,8 +24,8 @@ public class SimplifyPath {
         if(path == null || "".equals(path)){
             return null;
         }
-        String newPath = removePathNumber(path);
-        LinkedList<String> stack = getValidPath(newPath);
+        //String newPath = removePathNumber(path);
+        LinkedList<String> stack = getValidPath(path);
         if(stack.isEmpty()){
             return "/";
         }
@@ -42,6 +42,7 @@ public class SimplifyPath {
         String[] subPaths = path.split("/");
         for(int i = 0; i < subPaths.length; ++i){
             if("".equals(subPaths[i])){
+                //放弃空的路径，所以前面不用删除多余的/
                 continue;
             }
             if(subPaths[i].equals(".")) {
