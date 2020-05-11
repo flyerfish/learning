@@ -5,6 +5,8 @@ package com.sylar.leetcode;
  * https://leetcode-cn.com/problems/palindrome-number/
  */
 public class Palindrome {
+
+    //问题9
     public boolean isPalindrome2(int x) {
         String reversedStr = (new StringBuilder(x + "")).reverse().toString();
         return (x + "").equals(reversedStr);
@@ -16,12 +18,12 @@ public class Palindrome {
         }
 
         int res = 0;
-        int oldx = x;
+        int oldX = x;
         while(x != 0 ){
             res = x % 10 + res * 10;
             x /= 10;
         }
-        if( res == oldx ){
+        if( res == oldX ){
             return true;
         }else{
             return false;
