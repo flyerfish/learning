@@ -21,4 +21,10 @@ public class RemoveDuplicateLettersTest {
         RemoveDuplicateLetters rd = new RemoveDuplicateLetters();
         Assert.assertEquals("acdb", rd.removeDuplicateLetters("cbacdcbc"));
     }
+
+    @Test
+    public void test_003_removeDuplicateLetters() {
+        RemoveDuplicateLetters rd = new RemoveDuplicateLetters();
+        Assert.assertEquals("abcd", rd.removeDuplicateLetters("bcdabcda"));
+    }
 }
