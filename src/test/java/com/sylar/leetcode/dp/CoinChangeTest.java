@@ -1,5 +1,6 @@
-package com.sylar.leetcode;
+package com.sylar.leetcode.dp;
 
+import com.sylar.leetcode.dp.CoinChange;
 import org.junit.Assert;
 import org.junit.Test;
 

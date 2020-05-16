@@ -1,4 +1,4 @@
-package com.sylar.leetcode;
+package com.sylar.leetcode.dp;
 
 public class CoinChange {
     public int change(int amount, int[] coins) {
