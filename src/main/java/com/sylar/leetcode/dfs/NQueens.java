@@ -1,4 +1,4 @@
-package com.sylar.leetcode.bfs;
+package com.sylar.leetcode.dfs;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +33,9 @@ public class NQueens {
 
     // 在一行中放置一个皇后
     private void backtrack(int row) {
-        if (row >= n) return;
+        if (row >= n) {
+            return;
+        }
         // 分别尝试在 row 行中的每一列中放置皇后
         for (int col = 0; col < n; col++) {
             // 判断当前放置的皇后不被其他皇后的攻击
@@ -41,7 +43,9 @@ public class NQueens {
                 // 选择，在当前的位置上放置皇后
                 placeQueen(row, col);
                 // 当当前行是最后一行，则找到了一个解决方案
-                if (row == n - 1) addSolution();
+                if (row == n - 1) {
+                    addSolution();
+                }
                 // 在下一行中放置皇后
                 backtrack(row + 1);
                 // 撤销，回溯，即将当前位置的皇后去掉
@@ -93,9 +97,13 @@ public class NQueens {
         for (int i = 0; i < n; ++i) {
             int col = queens[i];
             StringBuilder sb = new StringBuilder();
-            for(int j = 0; j < col; ++j) sb.append(".");
+            for (int j = 0; j < col; ++j) {
+                sb.append(".");
+            }
             sb.append("Q");
-            for(int j = 0; j < n - col - 1; ++j) sb.append(".");
+            for (int j = 0; j < n - col - 1; ++j) {
+                sb.append(".");
+            }
             solution.add(sb.toString());
         }
         output.add(solution);

@@ -84,4 +84,11 @@ public class FizzBuzz {
             }
         }
     }
+
+
+    public class IntConsumer {
+        public void accept(int i) {
+
+        }
+    }
 }
