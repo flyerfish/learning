@@ -1,6 +1,11 @@
 package com.sylar.leetcode.alg;
 
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 /**
  * TreeNode
  *
@@ -43,5 +48,51 @@ public class TreeNode<T> {
         root.right = right;
         valueOf(left, vars, pos + 2);
         valueOf(right, vars, pos + 4);
+    }
+
+    public static <T> TreeNode<T> valueOf(List<T> vars) {
+        if (vars.size() == 0) {
+            return null;
+        }
+
+        Queue<TreeNode<T>> queue = new LinkedList<>();
+        TreeNode<T> root = new TreeNode<>(vars.get(0));
+        queue.add(root);
+        int i = 1;
+        while (false == queue.isEmpty() && i < vars.size()) {
+            TreeNode<T> node = queue.poll();
+            if (vars.get(i) != null) {
+                node.left = new TreeNode<>(vars.get(i));
+                queue.add(node.left);
+            }
+            ++i;
+            if (vars.get(i) != null) {
+                node.right = new TreeNode<>(vars.get(i));
+                queue.add(node.right);
+            }
+            ++i;
+        }
+        return root;
+    }
+
+    public static <T> List<T> toValue(TreeNode<T> root) {
+        if (root == null) {
+            return null;
+        }
+
+        Queue<TreeNode<T>> queue = new LinkedList<>();
+        queue.add(root);
+        List<T> value = new ArrayList<>();
+        while (false == queue.isEmpty()) {
+            TreeNode<T> node = queue.poll();
+            if (node == null) {
+                value.add(null);
+                continue;
+            }
+            value.add(node.val);
+            queue.add(node.left);
+            queue.add(node.right);
+        }
+        return value;
     }
 }
