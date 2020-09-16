@@ -14,11 +14,11 @@ public class RobHourse1 {
 		dp = new int[nums.length];
 		Arrays.fill(dp, -1);
 		// 强盗从第 0 间房子开始抢劫
-		return dp(nums, 0);
+		return robByDp(nums, 0);
 	}
 
 	// 返回 dp[start..] 能抢到的最大值
-	private int dp(int[] nums, int start) {
+	private int robByDp(int[] nums, int start) {
 		if (start >= nums.length) {
 			return 0;
 		}
@@ -28,7 +28,23 @@ public class RobHourse1 {
 		}
 
 		// 记入备忘录
-		dp[start] = Math.max(dp(nums, start + 1), nums[start] + dp(nums, start + 2));
+		dp[start] = Math.max(robByDp(nums, start + 1), nums[start] + robByDp(nums, start + 2));
 		return dp[start];
+	}
+
+	public int robByDp(int[] nums) {
+		if (nums.length == 0) {
+			return 0;
+		} else if (nums.length == 1) {
+			return nums[0];
+		}
+		int[] dp = new int[nums.length];
+		Arrays.fill(dp, 0);
+		dp[0] = nums[0];
+		dp[1] = Math.max(nums[0], nums[1]);
+		for (int i = 2; i < nums.length; ++i) {
+			dp[i] = Math.max(dp[i - 1], nums[i] + dp[i - 2]);
+		}
+		return dp[nums.length - 1];
 	}
 }
