@@ -3,8 +3,9 @@ package com.sylar.leetcode.dp;
 import java.util.Arrays;
 
 /**
- * Leetcode: 673
- * https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence/ 
+ * Leetcode: 673,300
+ * https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence/
+ * https://leetcode-cn.com/problems/longest-increasing-subsequence/
  */
 public class LIS {
 	public int lengthOfLIS(int[] nums) {
