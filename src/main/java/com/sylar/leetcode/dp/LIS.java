@@ -2,8 +2,10 @@ package com.sylar.leetcode.dp;
 
 import java.util.Arrays;
 
-//https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence/
-//
+/**
+ * Leetcode: 673
+ * https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence/ 
+ */
 public class LIS {
 	public int lengthOfLIS(int[] nums) {
 		if (nums.length == 0) {

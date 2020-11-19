@@ -3,7 +3,8 @@ package com.sylar.leetcode.dp;
 import java.util.Arrays;
 
 /**
- * test
+ * LeetCode：198
+ * https://leetcode-cn.com/problems/house-robber/
  */
 public class RobHourse1 {
 
