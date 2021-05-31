@@ -1,4 +1,4 @@
-package com.chaos;
+package com.chaos.leetcode;
 
 // https://leetcode-cn.com/problems/rectangle-area/
 

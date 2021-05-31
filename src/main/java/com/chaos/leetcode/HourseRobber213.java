@@ -1,4 +1,4 @@
-package com.chaos;
+package com.chaos.leetcode;
 
 import java.util.Arrays;
 

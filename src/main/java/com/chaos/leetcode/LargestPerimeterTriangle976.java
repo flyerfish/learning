@@ -1,4 +1,4 @@
-package com.chaos;
+package com.chaos.leetcode;
 
 import static java.util.Arrays.sort;
 

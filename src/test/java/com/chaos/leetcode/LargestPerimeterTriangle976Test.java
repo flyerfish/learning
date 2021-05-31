@@ -1,4 +1,4 @@
-package com.chaos;
+package com.chaos.leetcode;
 
 import org.junit.Assert;
 import org.junit.Test;
