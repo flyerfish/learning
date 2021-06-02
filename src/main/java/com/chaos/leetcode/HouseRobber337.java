@@ -20,12 +20,13 @@ public class HouseRobber337 {
         }
         // 抢，然后去下下家
         int do_it = root.val
-                + (root.left == null ? 0 : rob(root.left.left) + rob(root.left.right))
-                + (root.right == null ? 0 : rob(root.right.left) + rob(root.right.right));
+            + (root.left == null ? 0 : rob(root.left.left) + rob(root.left.right))
+            + (root.right == null ? 0 : rob(root.right.left) + rob(root.right.right));
 
         // 不抢，然后去下家
         int not_do = rob(root.left) + rob(root.right);
         int res = Math.max(do_it, not_do);
+        //System.out.printf("val=%d do--%d : not-do--%d : max--%d\n", root.val, do_it, not_do, res);
         memo.put(root, res);
         return res;
     }
