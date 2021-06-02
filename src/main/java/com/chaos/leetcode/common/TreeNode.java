@@ -47,4 +47,30 @@ public class TreeNode {
 
         return root;
     }
+
+    public static Integer[] toArray(TreeNode root) {
+        if (root == null) {
+            return new Integer[0];
+        }
+
+        LinkedList<Integer> out = new LinkedList<>();
+        LinkedList<TreeNode> q = new LinkedList<>();
+        q.offer(root);
+
+        while (!q.isEmpty()) {
+            TreeNode curr = q.poll();
+
+            if (curr == null) {
+                out.add(null);
+                continue;
+            }
+            out.add(curr.val);
+
+            q.offer(curr.left);
+            q.offer(curr.right);
+
+        }
+
+        return out.toArray(new Integer[0]);
+    }
 }
